@@ -8,8 +8,9 @@
 
 git add .
 
-git commit -m "push to the master.home branch"
+git commit -m "Update the master.home branch"
 
 git push origin master.home
 
-echo "The Works is OK!!Thanks!!!"
+echo "The Works Which push Local-repository to Remote-repository is OK!!Thanks!!!"
+

@@ -8,8 +8,9 @@
 
 git add .
 
-git commit -m "push to the master.mobile branch"
+git commit -m "Update the master.mobile branch"
 
 git push origin master.mobile
 
-echo "The Works is OK!!Thanks!!!"
+echo "The Works Which push Local-repository to Remote-repository is OK!!Thanks!!!"
+
