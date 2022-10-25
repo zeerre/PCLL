@@ -16,5 +16,7 @@ git commit -m "Update the master.home branch"
 
 git push origin master.home
 
+echo
+echo
 echo "The Works Which push Local-repository to Remote-repository is OK!!Thanks!!!"
 
