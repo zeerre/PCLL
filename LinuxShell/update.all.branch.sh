@@ -8,6 +8,6 @@
 
 git pull
 
-git merge origin master.buffer
+git merge origin/master.buffer
 
 echo "Updated all the branch ,And merged master.buffer to local branch!!!Thanks!!!"
