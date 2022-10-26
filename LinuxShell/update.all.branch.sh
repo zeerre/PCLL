@@ -12,7 +12,7 @@ echo
 
 git pull
 
-git merge origin master.buffer
+git merge origin/master.buffer
 
 echo
 echo
