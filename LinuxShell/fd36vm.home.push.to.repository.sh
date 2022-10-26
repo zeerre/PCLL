@@ -12,9 +12,9 @@ echo
 
 git add .
 
-git commit -m "Update the master.mobile branch"
+git commit -m "Update the master.fd36vm branch"
 
-git push origin master.mobile
+git push origin master.fd36vm
 
 echo
 echo

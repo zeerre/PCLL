@@ -6,8 +6,14 @@
 # Created And Modified Time: ====2022-10-25  12-48-55====
 #########################################################################
 
+echo "Start Updating remote branch to local,Wait..."
+echo
+echo
+
 git pull
 
 git merge origin/master.buffer
 
+echo
+echo
 echo "Updated all the branch ,And merged master.buffer to local branch!!!Thanks!!!"
