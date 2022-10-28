@@ -7,10 +7,31 @@
 
 #include <iostream>
 using namespace std;
-int bubble(int [],bool );
-
+int bubble(int[],int);
+int a[]={21,1,31,12,29,5,34};
 int main() {
-    int a[]{0};
-    
+    int len;
+    len=sizeof(a)/sizeof(a[0]);
+    cout<<bubble(a,len)<<endl;
+    for(auto val:a){
+        cout<<val<<" ";
+    }
+    cout<<endl;
     return 0;
+}
+
+int bubble(int *b,int l){
+    int num=0;
+    for(int i=0;i<l;i++){
+        for(int j=0;j<l-i-1;j++){
+            if(b[j]>b[j+1]){
+                int temp;
+                temp=b[j];
+                b[j]=b[j+1];
+                b[j+1]=temp;
+                num++;
+            }
+        }
+    }
+    return num;
 }
