@@ -2,7 +2,7 @@
 using namespace std;
 int list[100+1]={1,3,5,14,23,32,36,44,45};
 int mid=0;
-int item=7;
+int item=2;
 int i=0;
 int num=0;
 void binary_search(int low,int high){

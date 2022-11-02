@@ -1,36 +1,36 @@
 //*************************************************************************
-//* File Name: insert.cpp
+//* File Name: it.cpp
 //* Author:GeekBear
 //* Mail:zeerre98988@gmail.com 
-//* Created And Modified Time: ====2022-10-28  09-37-55====
+//* Created And Modified Time: ====2022-10-30  20-58-28====
 //*************************************************************************
 
 #include <iostream>
 using namespace std;
-int insert(int[],int);
-int arr[]{12,3,45,32,87,12,21,18,54};
+int inserts(int[],int);
 int main() {
-    int len;
-    len=sizeof(arr)/sizeof(arr[0]);
-    cout<<insert(arr,len)<<" "<<endl;
-    for(auto k:arr){
-        cout<<k<<" ";
+    int a[]={32,12,31,10,2,8,23,65,43};
+    int len=sizeof(a)/sizeof(a[0]);
+    cout<<inserts(a,len)<<endl;
+    for(auto v:a){
+        cout<<v<<"\t";
     }
     cout<<endl;
     return 0;
 }
-int insert(int a[],int len){
+
+int inserts(int b[],int len){
+    int i,j,tem;
     int num=0;
-    for(int i=1;i<len;i++){
-        int index=i-1;
-        int tem=a[i];
-        while(index>=0&& a[index]>tem){
-            a[index+1]=a[index];
-            index--;
+    for(i=1;i<len;i++){
+        tem=b[i];
+        j=i-1;
+        while(j>=0 && b[j]>tem){
+            b[j+1]=b[j];
+            j--;
             num++;
         }
-        num++;
-        a[index+1]=tem;
+        b[j+1]=tem;
     }
     return num;
 }
