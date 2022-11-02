@@ -19,8 +19,9 @@ int main() {
 void binsort(int begin,int last, long pur){
     int mid;
     mid=(begin+last)/2;
+    num++;
     if(pur>a[mid]){
- 	    num++;
+ 	    
 	    mid+=1;
 	    if(mid<=last){
 		    binsort(mid,last,pur);
@@ -29,7 +30,7 @@ void binsort(int begin,int last, long pur){
             cout<<"Totle: "<<num<<endl;
         }
     }else if(pur<a[mid]){
-	    num++;
+	    
 	    mid-=1;
 	    if(mid>=0){
 		    binsort(0,mid,pur);
@@ -38,7 +39,7 @@ void binsort(int begin,int last, long pur){
             cout<<"Totle: "<<num<<endl;
         }
     }else if(pur==a[mid]){
-        num++;
+        
         cout<<"Finded!! "<<a[mid]<<" Run "<<num<<" rate."<<endl;
     }
 }

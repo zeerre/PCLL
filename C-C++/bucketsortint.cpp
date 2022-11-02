@@ -52,10 +52,10 @@ void printarr(int a[],int len){
 void bucketsortint(int a[],int len){
     int max=getmax(a,len);
     int min=getmin(a,len);
-    //int bi=(max-min)/len;
+    int n=(max-min)/len+1;
     vector<int> bucket[len];
     for(int i=0;i<len;i++){
-        bucket[int(a[i]/10)].push_back(a[i]);
+        bucket[int(a[i]/n/10)].push_back(a[i]);
     }
     for(int i=0;i<len;i++){
         sort(bucket[i].begin(),bucket[i].end());
