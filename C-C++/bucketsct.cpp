@@ -13,7 +13,7 @@ using namespace std;
 class Bucket{
     int len;
     int num;
-
+    
     public:
     Bucket()
 }
