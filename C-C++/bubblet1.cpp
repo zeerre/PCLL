@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 int bubble(int[],int);
-int a[]={21,1,31,12,29,5,34};
+int a[]={9, 3, 4, 2, 1, 8, 12, 92, 32, 52, 76};
 int main() {
     int len;
     len=sizeof(a)/sizeof(a[0]);
