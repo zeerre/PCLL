@@ -63,7 +63,7 @@ int main()
     int arr[] = { 9, 3, 4, 2, 1, 8, 12, 92, 32, 52, 76};
     int n = sizeof(arr)/sizeof(arr[0]);
 
-    quickSort(arr, 0, n - 1);
+    quickSort(arr, 0, n );
     cout<<"Sort by :"<<num<<" times."<<endl;
 
     for (int i = 0; i < n; i++) {
