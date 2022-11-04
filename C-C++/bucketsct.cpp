@@ -5,17 +5,21 @@
 //* Created And Modified Time: ====2022-11-02  11-57-13====
 //*************************************************************************
 
-#include <iostream>
-#include<vector>
-#include<algorithm>
+#include<bits/stdc++.h>
 
 using namespace std;
 class Bucket{
     int len;
     int num;
-
+    vector<int> vec; 
     public:
-    Bucket()
+    Bucket(vector v,int l):vec(v),len(l){}
+    void bucket(vector v,int l){
+        
+        for(int i=0;i<l;i++){
+            
+        }
+    }
 }
 int main() {
 
