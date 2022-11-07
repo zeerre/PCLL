@@ -1,68 +1,52 @@
 //*************************************************************************
-//* File Name: countsort.cpp
+//* File Name: countsortt.cpp
 //* Author:GeekBear
 //* Mail:zeerre98988@gmail.com 
-//* Created And Modified Time: ====2022-11-06  21-39-38====
+//* Created And Modified Time: ====2022-11-07  09-50-08====
 //*************************************************************************
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-void countSort(int array[], int size) {
-  // The size of count must be at least the (max+1) but
-  // we cannot assign declare it as int count(max+1) in C++ as
-  // it does not support dynamic memory allocation.
-  // So, its size is provided statically.
-  int output[10];
-  int count[10];
-  int max = array[0];
-
-  // Find the largest element of the array
-  for (int i = 1; i < size; i++) {
-    if (array[i] > max)
-      max = array[i];
-  }
-
-  // Initialize count array with all zeros.
-  for (int i = 0; i <= max; ++i) {
-    count[i] = 0;
-  }
-
-  // Store the count of each element
-  for (int i = 0; i < size; i++) {
-    count[array[i]]++;
-  }
-
-  // Store the cummulative count of each array
-  for (int i = 1; i <= max; i++) {
-    count[i] += count[i - 1];
-  }
-
-  // Find the index of each element of the original array in count array, and
-  // place the elements in output array
-  for (int i = size - 1; i >= 0; i--) {
-    output[count[array[i]] - 1] = array[i];
-    count[array[i]]--;
-  }
-
-  // Copy the sorted elements into original array
-  for (int i = 0; i < size; i++) {
-    array[i] = output[i];
-  }
-}
-
-// Function to print an array
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; i++)
-    cout << array[i] << " ";
-  cout << endl;
-}
-
-// Driver code
+void counts(int [],int);
+int getmax(int [],int);
 int main() {
-  int array[] = {4, 2, 2, 8, 3, 3, 1};
-  int n = sizeof(array) / sizeof(array[0]);
-  countSort(array, n);
-  printArray(array, n);
-  return 0;
+    int a[]={3,21,4,5,5,4,3,2,12,12,3,2,1,1,0};
+    int len=sizeof(a)/sizeof(a[0]);
+    counts(a,len);
+    for(auto v:a){
+        cout<<v<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+void counts(int a[],int len){
+    int max=getmax(a,len);
+    int counta[max+1];
+    int output[len];
+    for(int i=0;i<=max;i++){
+        counta[i]=0;
+    }
+    //memset(count,0,sizeof(count));
+    for(int i=0;i<len;i++){
+        counta[a[i]]++;
+    }
+    for(int i=0,j=0;i<=max;i++){
+        while(counta[i]>0){
+            output[j]=i;
+            counta[i]--;
+            j++;
+        }
+    }
+    for(int i=0;i<len;i++){
+        a[i]=output[i];
+    }
+}
+int getmax(int a[],int len){
+    int max=a[0];
+    for(int i=1;i<len;i++){
+        if(a[i]>=max){
+            max=a[i];
+        }
+    }
+    return max;
 }
