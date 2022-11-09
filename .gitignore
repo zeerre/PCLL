@@ -37,6 +37,7 @@
 *.hex
 *.class
 *.swp
+*.gch
 
 # Debug files
 *.dSYM/
