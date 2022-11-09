@@ -6,7 +6,7 @@
 //*************************************************************************
 
 #include <iostream>
-#include "heapsort.h"
+#include "../source/heapsort.h"
 using namespace std;
 int main() {
     int a[]={90,0,32,12,21,31,12,0,56,65,76,76,87,78,98,89};
