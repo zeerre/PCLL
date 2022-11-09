@@ -37,6 +37,14 @@ void counts(int a[],int len){
             j++;
         }
     }
+    /*
+    for(int i=1;i<len;i++){
+        count[i]+=count[i-1];
+    }
+    for(int i=0;i<len;i++){
+        output[count[a[i]]-1]=a[i];
+    }
+    */
     for(int i=0;i<len;i++){
         a[i]=output[i];
     }
