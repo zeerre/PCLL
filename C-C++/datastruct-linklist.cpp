@@ -128,6 +128,7 @@ void printList(struct Node* node) {
   cout << node->data << " ";
   node = node->next;
   }
+  cout<<endl;
 }
 
 // Driver program
