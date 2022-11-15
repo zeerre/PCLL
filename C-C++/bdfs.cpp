@@ -75,5 +75,7 @@ int main() {
     g.edge2(2,3);
     g.edge2(3,4);
     g.bfs(2);
+    cout<<endl;
+
     return 0;
 }
