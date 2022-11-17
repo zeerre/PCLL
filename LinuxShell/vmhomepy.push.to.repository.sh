@@ -18,5 +18,5 @@ git push origin master.vmhomepy
 
 echo
 echo
-echo "The Works Which push Local-repository to Remote-repository is OK!!Thanks!!!"
+echo "The Works Which push Local-repository to Remote-repository is COMPLETED!!Thanks!!!"
 
