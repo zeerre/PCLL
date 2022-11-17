@@ -1,7 +1,7 @@
 //*************************************************************************
 //* File Name: hashtable.cpp
 //* Author:GeekBear
-//* Mail:zeerre98988@gmail.com 
+//* Mail:zeerre98988@gmail.com
 //* Created And Modified Time: ====2022-11-16  21-03-53====
 //*************************************************************************
 
@@ -76,18 +76,14 @@ int HashTable::hashFunction(int key){
 	return (key % capacity);
 }
 
-int main()
-{
-  int key[] = {231, 321, 212, 321, 433, 262};
-  int data[] = {123, 432, 523, 43, 423, 111};
-  int size = sizeof(key) / sizeof(key[0]);
-
-  HashTable h(size);
-
-  for (int i = 0; i < size; i++)
-  h.insertItem(key[i], data[i]);
-
-  h.deleteItem(12);
-  h.displayHash();
-  return 0;
+int main(){
+    int key[] = {231, 321, 212, 321, 433, 262};
+    int data[] = {123, 432, 523, 43, 423, 111};
+    int size = sizeof(key) / sizeof(key[0]);
+    HashTable h(size);
+    for (int i = 0; i < size; i++)
+        h.insertItem(key[i], data[i]);
+    h.deleteItem(12);
+    h.displayHash();
+    return 0;
 }
