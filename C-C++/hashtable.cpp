@@ -9,16 +9,16 @@
 #include <list>
 using namespace std;
 class HashTable{
-  int capacity;
-  list<int> *table;
+	int capacity;
+	list<int> *table;
 public:
-  HashTable(int V);
-  void insertItem(int key, int data);
-  void deleteItem(int key);
-  int checkPrime(int n);
-  int getPrime(int n);
-  int hashFunction(int key);
-  void displayHash();
+	HashTable(int V);
+	void insertItem(int key, int data);
+	void deleteItem(int key);
+	int checkPrime(int n);
+	int getPrime(int n);
+	int hashFunction(int key);
+	void displayHash();
 };
 HashTable::HashTable(int c){
 	int size = getPrime(c);
@@ -29,7 +29,6 @@ void HashTable::insertItem(int key, int data){
 	int index = hashFunction(key);
 	table[index].push_back(data);
 }
-
 void HashTable::deleteItem(int key){
 	int index = hashFunction(key);
 	list<int>::iterator i;
@@ -40,7 +39,6 @@ void HashTable::deleteItem(int key){
 	if (i != table[index].end())
 		table[index].erase(i);
 }
-
 void HashTable::displayHash(){
 	for (int i = 0; i < capacity; i++){
 		cout << "table[" << i << "]";
@@ -49,7 +47,6 @@ void HashTable::displayHash(){
 		cout << endl;
 	}
 }
-
 int HashTable::checkPrime(int n){
 	int i;
 	if (n == 1 || n == 0){
@@ -71,11 +68,9 @@ int HashTable::getPrime(int n){
 	}
 	return n;
 }
-
 int HashTable::hashFunction(int key){
 	return (key % capacity);
 }
-
 int main(){
     int key[] = {231, 321, 212, 321, 433, 262};
     int data[] = {123, 432, 523, 43, 423, 111};
