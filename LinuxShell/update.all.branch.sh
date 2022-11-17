@@ -16,4 +16,4 @@ git merge origin/master.buffer
 
 echo
 echo
-echo "Updated all the branch ,And merged master.buffer to local branch!!!Thanks!!!"
+echo "Updated all the branch ,And merged master.buffer to local branch COMPLETED!!!Thanks!!!"
