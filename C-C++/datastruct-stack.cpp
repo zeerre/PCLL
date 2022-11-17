@@ -1,31 +1,25 @@
 //*************************************************************************
 //* File Name: datastruct-stack.cpp
 //* Author:GeekBear
-//* Mail:zeerre98988@gmail.com 
+//* Mail:zeerre98988@gmail.com
 //* Created And Modified Time: ====2022-11-14  19-47-10====
 //*************************************************************************
 
 // Stack implementation in C++
-
 #include <stdlib.h>
 #include <iostream>
-
 using namespace std;
-
 #define MAX 10
 static int num = 0;
-
 // Creating a stack
 struct stack {
   int items[MAX];
   int top;
 };
 typedef struct stack st;
-
 void createEmptyStack(st *s) {
   s->top = -1;
 }
-
 // Check if the stack is full
 int isfull(st *s) {
   if (s->top == MAX - 1)
@@ -33,7 +27,6 @@ int isfull(st *s) {
   else
     return 0;
 }
-
 // Check if the stack is empty
 int isempty(st *s) {
   if (s->top == -1)
@@ -41,7 +34,6 @@ int isempty(st *s) {
   else
     return 0;
 }
-
 // Add elements into stack
 void push(st *s, int newitem) {
   if (isfull(s)) {
@@ -52,7 +44,6 @@ void push(st *s, int newitem) {
   }
   num+=1;
 }
-
 // Remove element from stack
 void pop(st *s) {
   if (isempty(s)) {
@@ -64,7 +55,6 @@ void pop(st *s) {
   num-=1;
   cout << endl;
 }
-
 // Print elements of stack
 void printStack(st *s) {
   printf("Stack: ");
@@ -73,25 +63,18 @@ void printStack(st *s) {
   }
   cout << endl;
 }
-
 // Driver code
 int main() {
   int ch;
   st *s = (st *)malloc(sizeof(st));
-
   createEmptyStack(s);
-
   push(s, 1);
   push(s, 2);
   push(s, 3);
   push(s, 4);
-
   printStack(s);
-
   pop(s);
-
   cout << "\nAfter popping out\n";
   printStack(s);
-  
   return 0;
 }
