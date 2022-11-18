@@ -15,45 +15,52 @@
 //pop                   Delete next element (public member function)
 
 #include<bits/stdc++.h>
-#define N 100
+#define N 10
 using namespace std;
-
+/*
 struct queuest{
-    int data[N];
+    char data[N];
     int front,rear;
 };
-void createqueue(struct queuest *q){
+void createqueue(struct queuest* q){
     q->front=-1;
     q->rear=-1;
 }
-int isfull(struct queuest *q){
+void initqueue(struct queuest* q){
+    q->front=0;
+    q->rear=0;
+    q->data[q->front]='N';
+}
+int isfull(struct queuest* q){
     if(q->front==0&&q->rear==N-1){
         return true;
     }else{
         return false;
     }
 }
-int isempty(struct queuest *q){
+int isempty(struct queuest* q){
     if(q->front==-1){
-        return 1;
+        return true;
     }else{
-        return 0;
+        return false;
     }
 }
-void pushqueue(struct queuest *q,int item){
+void pushqueue(struct queuest* q,int item){
     if(isfull(q)){
         cout<<"Queue FULL!\n";
         //return;
     }else{
-        if(isempty(q))
+        if(isempty(q)){
             q->front=0;
+            q->rear=0;
+        }
         q->rear += 1;
         q->data[q->rear]=item;
         cout<<"Insert element:"<<q->data[q->rear]<<endl;
     }
 }
 void popqueue(struct queuest* q){
-    int temp;
+    char temp;
     if(isempty(q)){
         cout<<"Queue Empty!\n";
     }else{
@@ -67,22 +74,44 @@ void popqueue(struct queuest* q){
         cout<<"Pop element:"<<temp<<endl;
     }
 }
+int getlenth(struct queuest* q){
+    return q->rear - q->front + 1;
+}
 void display(struct queuest* q){
     if(isempty(q)) {
         cout<<"Empty Queue!!\n";
     }else{
+        cout<<"Queue element:";
         for(int i=q->front;i<=q->rear;i++)
             cout<<q->data[i]<<" ";
         cout<<endl;
     }
 }
 int main(){
-    struct queuest* t;
-    //for(int i=0;i<10;i++){
-        pushqueue(t,9);
-    //}
+    struct queuest* t=(struct queuest*)malloc(sizeof(struct queuest));
+    initqueue(t);
     display(t);
-    popqueue(t);
+    //createqueue(t);
+    //display(t);
+    for(char i='a';i<'g';i++){
+        pushqueue(t,i);
+    }
     display(t);
+    for(int i=1;i<4;i++)
+        popqueue(t);
+    display(t);
+    cout<<getlenth(t)<<endl;
     return 0;
 }
+*/
+
+struct node{
+    list<int>*queue;
+    struct node *start,*end;
+};
+void initque(struct node* p,int n){
+    p->queue=new list<int>[n];
+    p->start=NULL;
+    p->end=NULL;
+}
+
