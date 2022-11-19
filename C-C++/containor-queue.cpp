@@ -17,7 +17,7 @@
 #include<bits/stdc++.h>
 #define N 10
 using namespace std;
-/*
+
 struct queuest{
     char data[N];
     int front,rear;
@@ -88,8 +88,7 @@ void display(struct queuest* q){
     }
 }
 int main(){
-    struct queuest* t=(struct queuest*)malloc(sizeof(struct queuest));
-    initqueue(t);
+    struct queuest* t=new queuest();
     display(t);
     //createqueue(t);
     //display(t);
@@ -103,15 +102,5 @@ int main(){
     cout<<getlenth(t)<<endl;
     return 0;
 }
-*/
 
-struct node{
-    list<int>*queue;
-    struct node *start,*end;
-};
-void initque(struct node* p,int n){
-    p->queue=new list<int>[n];
-    p->start=NULL;
-    p->end=NULL;
-}
 
