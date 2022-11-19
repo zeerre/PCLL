@@ -17,7 +17,7 @@
 #include<bits/stdc++.h>
 #define N 10
 using namespace std;
-
+/*
 struct queuest{
     char data[N];
     int front,rear;
@@ -103,4 +103,49 @@ int main(){
     return 0;
 }
 
+*/
+struct node{
+    int data;
+    int num;
+    struct node *next,*head;
 
+};
+void initque(struct node* p){
+    p->head=NULL;
+    p->num=0;
+}
+void pushque(struct node* p,int data){
+    struct node* t=new struct node();
+    struct node* temp;
+    t->data=data;
+    t->next=NULL;
+    temp=p;
+    if(p==NULL){
+        p->head=t;
+        p->num+=1;
+        p=t;
+        return;
+    }
+    if(p!=NULL){
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        temp->next=t;
+        p->num+=1;
+        return;
+    }
+}
+void display(struct node* p){
+    while(p!=NULL){
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+    cout<<endl;
+}
+int main(){
+    struct node* p=(struct node*)malloc(sizeof(struct node));
+    initque(p);
+    pushque(p,100);
+    display(p);
+    return 0;
+}
