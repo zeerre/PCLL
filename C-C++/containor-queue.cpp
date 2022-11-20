@@ -107,13 +107,14 @@ int main(){
 struct node{
     int data;
     int num;
-    struct node *next,*head;
+  struct node *next,*head,*rear;
 
 };
-//void initque(struct node* p){
-//    p->head=NULL;
-//    p->num=0;
-//}
+void initque(struct node* p){
+    p->head=NULL;
+    p->rear=NULL;
+    p->num=100;
+}
 void pushque(struct node* p,int data){
     struct node* t=new struct node();
     struct node* temp;
@@ -122,6 +123,7 @@ void pushque(struct node* p,int data){
     temp=p;
     if(p==NULL){
         p->head=t;
+	p->rear=t;
         p->num+=1;
         p=t;
         return;
@@ -131,23 +133,28 @@ void pushque(struct node* p,int data){
             temp=temp->next;
         }
         temp->next=t;
+	p->rear=temp;
         p->num+=1;
         return;
     }
 }
 void popque(struct node* p){
-  struct node* temp;
-  if(temp==NULL){
-    cout<<"Empty Queue!"<<endl;
-    return;
-  }else{
-    //p->head=p->next;
-    //temp=temp->next;
-    p=temp;
+  if(p==NULL) {
+    cout<<"Empty Queue!!"<<endl;
     return;
   }
+  if(p->head==p->rear){
+    p->head=NULL;
+    p->rear=NULL;
+    p->num-=1;
+  }else{
+    struct node* temp=p;
+    temp->head=temp->next->head;
+    temp=temp->next;
+    temp->num-=1;
+    p=temp;
+  }
 }
-  
 void display(struct node* p){
     while(p!=NULL){
         cout<<p->data<<" ";
@@ -158,7 +165,7 @@ void display(struct node* p){
 int main(){
     struct node* p=(struct node*)malloc(sizeof(struct node));
     p->data=100;
-    //    initque(p);
+    initque(p);
     display(p);
     for(int i=0;i<10;i++)
       pushque(p,i);
