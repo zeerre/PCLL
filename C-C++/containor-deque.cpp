@@ -65,3 +65,94 @@
 //const_reverse_iterator                    |reverse_iterator<const_iterator> 
 //
 //
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node{
+    int data;
+    struct node* prev;
+    struct node* next;
+};
+void initdeque(struct node** p){
+    *p=NULL;
+}
+void fpushdeque(struct node** p,int data){
+    struct node* n=new struct node();
+    if(*p==NULL){
+        n->next=NULL;
+        n->data=data;
+        *p=n;
+    }else{
+        n->data=data;
+        n->next=(*p);
+        n->prev=(*p)->prev;
+        (*p)->prev=n;
+        *p=n;
+    }
+}
+void epushdeque(struct node** p,int data){
+    struct node* n=new struct node();
+    if(*p==NULL){
+        n->data=data;
+        n->next=NULL;
+        n->prev=NULL;
+        *p=n;
+    }else{
+        struct node* temp;
+        temp=(*p);
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        n->data=data;
+        n->next=temp->next;
+        temp->next=n;
+        n->prev=temp;
+    }
+}
+void fpopdeque(struct node** p){
+    if(*p==NULL){
+        cout<<"Empty Deque!!"<<endl;
+    }else{
+        struct node* temp;
+        temp=(*p);
+        if(temp->next==NULL){
+            temp=NULL;
+            *p=temp;
+        }else{
+            temp=temp->next;
+            temp->prev=NULL;
+            *p=temp;
+        }
+    }
+}
+void epopdeque(struct node** p){
+
+}
+void display(struct node** p){
+    struct node* temp;
+    temp=(*p);
+    if(temp==NULL){
+        cout<<"Empty Deque!!"<<endl;
+    }else{
+        while(temp!=NULL){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+        cout<<endl;
+    }
+}
+int main(){
+    struct node* p=new struct node();
+    initdeque(&p);
+    display(&p);
+    for(int i=0;i<10;i++)
+        epushdeque(&p,i);
+    display(&p);
+    for(int i=0;i<3;i++)
+        fpopdeque(&p);
+    display(&p);
+    fpushdeque(&p,100);
+    display(&p);
+    return 0;
+}

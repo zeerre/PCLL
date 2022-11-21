@@ -15,7 +15,6 @@
 //pop                   Delete next element (public member function)
 
 #include<bits/stdc++.h>
-#define N 10
 using namespace std;
 /*
 struct queuest{
@@ -104,58 +103,45 @@ int main(){
 }
 
 */
+
+
 struct node{
     int data;
-    int num;
-  struct node *next,*head,*rear;
-
+    struct node* next;
 };
-void initque(struct node* p){
-    p->head=NULL;
-    p->rear=NULL;
-    p->num=100;
+void initque(struct node *p,int data){
+    p->next=NULL;
+    p->data=data;
 }
-void pushque(struct node* p,int data){
-    struct node* t=new struct node();
-    struct node* temp;
-    t->data=data;
-    t->next=NULL;
-    temp=p;
-    if(p==NULL){
-        p->head=t;
-	p->rear=t;
-        p->num+=1;
-        p=t;
-        return;
-    }
-    if(p!=NULL){
+void pushque(struct node** p,int data){
+    struct node *newnode=new struct node();
+    struct node* temp=(*p);
+    if(temp==NULL){
+        newnode->data=data;
+        newnode->next=NULL;
+        temp=newnode;
+        *p=temp;
+    }else{
         while(temp->next!=NULL){
             temp=temp->next;
         }
-        temp->next=t;
-	p->rear=temp;
-        p->num+=1;
-        return;
+        newnode->data=data;
+        newnode->next=NULL;
+        temp->next=newnode;
     }
 }
-void popque(struct node* p){
-  if(p==NULL) {
-    cout<<"Empty Queue!!"<<endl;
-    return;
-  }
-  if(p->head==p->rear){
-    p->head=NULL;
-    p->rear=NULL;
-    p->num-=1;
-  }else{
-    struct node* temp=p;
-    temp->head=temp->next->head;
-    temp=temp->next;
-    temp->num-=1;
-    p=temp;
-  }
+void popque(struct node** p){
+    struct node* temp;
+    temp=(*p);
+    if(temp->next==NULL){
+        temp=NULL;
+    }else{
+        temp=temp->next;
+    }
+    *p=temp;
 }
-void display(struct node* p){
+void display(struct node *p){
+    if(p==NULL) cout<<"Empty Queue!"<<endl;
     while(p!=NULL){
         cout<<p->data<<" ";
         p=p->next;
@@ -163,14 +149,16 @@ void display(struct node* p){
     cout<<endl;
 }
 int main(){
-    struct node* p=(struct node*)malloc(sizeof(struct node));
-    p->data=100;
-    initque(p);
+    struct node* p=new struct node();
+    initque(p,100);
     display(p);
-    for(int i=0;i<10;i++)
-      pushque(p,i);
+    pushque(&p,101);
     display(p);
-    popque(p);
+    popque(&p);
+    popque(&p);
+    display(p);
+    for(int i=1;i<10;i++)
+        pushque(&p,i);
     display(p);
     return 0;
 }
