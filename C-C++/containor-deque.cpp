@@ -127,8 +127,40 @@ void fpopdeque(struct node** p){
     }
 }
 void epopdeque(struct node** p){
-
+    struct node* temp;
+    if(p==NULL){
+        cout<<"Empty Queue!!"<<endl;
+    }else{
+        temp=(*p);
+        if(temp->next==NULL){
+            temp=NULL;
+            (*p)=temp;
+        }else{
+            while(temp->next!=NULL){
+                temp=temp->next;
+            }
+            temp->prev->next=temp->next;
+            temp=temp->prev;
+        }
+    }
 }
+/*
+void deldeque(struct node** p,int key){
+    struct node* temp;
+    temp=(*p);
+    if(temp==NULL){
+        cout<<"Empty Deque."<<endl;
+    }else{
+        while(temp->next!=NULL&&temp->prev!=NULL&&temp->data==key){
+            struct node* t1=temp->next;
+            struct node* t2=temp->prev;
+            t1->prev=t2;
+            t2->next=t1;
+            temp=t1;
+        }
+    }
+}
+*/
 void display(struct node** p){
     struct node* temp;
     temp=(*p);
@@ -146,13 +178,26 @@ int main(){
     struct node* p=new struct node();
     initdeque(&p);
     display(&p);
-    for(int i=0;i<10;i++)
-        epushdeque(&p,i);
+    fpushdeque(&p,99);
     display(&p);
-    for(int i=0;i<3;i++)
+    for(int i=0;i<10;i++){
+        epushdeque(&p,i);
+        fpushdeque(&p,i*2);
+    }
+    display(&p);
+    for(int i=0;i<3;i++){
         fpopdeque(&p);
+        epopdeque(&p);
+    }
     display(&p);
     fpushdeque(&p,100);
     display(&p);
+    epopdeque(&p);
+    display(&p);
+    epopdeque(&p);
+    epopdeque(&p);
+    display(&p);
+//    deldeque(&p,0);
+//    display(&p);
     return 0;
 }
