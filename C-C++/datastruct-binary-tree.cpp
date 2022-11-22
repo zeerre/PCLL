@@ -103,7 +103,10 @@ int main() {
   struct node *root = newNode(1);
   root->left = newNode(2);
   root->right = newNode(3);
+  root->right->left=newNode(6);
+  root->right->right=newNode(7);
   root->left->left = newNode(4);
+  root->left->right=newNode(5);
 
   cout << "preorder traversal: ";
   traversePreOrder(root);
@@ -111,4 +114,6 @@ int main() {
   traverseInOrder(root);
   cout << "\nPostorder traversal: ";
   traversePostOrder(root);
+  cout<<endl;
+  return 0;
 }
