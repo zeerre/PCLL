@@ -13,13 +13,12 @@ struct node{
     struct node* left;
     struct node* right;
 };
-struct node *newnode(int data){
-    struct node *n=(struct node*)malloc(sizeof(struct node));
-//  struct node *n=new struct node();
-    n->data=data;
-    n->left=NULL;
-    n->right=NULL;
-    return (n);
+struct node* newnode(int data){
+    struct node* p=new struct node();
+    p->data=data;
+    p->left=NULL;
+    p->right=NULL;
+    return (p);
 }
 void preordertree(struct node* p){
     if(p!=NULL){
