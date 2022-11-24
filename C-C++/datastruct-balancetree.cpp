@@ -63,7 +63,7 @@ int main() {
   root->left->right = newNode(5);
 
   if (checkHeightBalance(root, &height))
-    cout << "The tree is balanced";
+    cout << "The tree is balanced\n";
   else
-    cout << "The tree is not balanced";
+    cout << "The tree is not balanced\n";
 }
