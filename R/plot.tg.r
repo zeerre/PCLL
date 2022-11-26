@@ -1,3 +1,6 @@
-x<-(-9:9)
-y<- -x*x-4*x+2
-plot(x,y,type="orange")
+x<- function(y) cos(y)
+y<- function(x) sin(x)
+plot(y,-pi,pi,ylim=c(-1,1),col="blue")
+plot(x,-pi,pi,ylim=c(-1,1),col="red",add=T)
+abline(h=0,v=0)
+
