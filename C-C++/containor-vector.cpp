@@ -60,4 +60,26 @@
 //const_reverse_iterator 	|reverse_iterator<const_iterator> 
 
 
+#include <bits/stdc++.h>
 
+using namespace std;
+
+struct node{
+    int data;
+    struct node* next;
+    struct node* prev;
+};
+struct node* newnode(int data){
+    struct node* p=(struct node*)malloc(sizeof(struct node));
+    //struct node* p=new struct node();
+    p->data=data;
+    p->next=NULL;
+    p->prev=NULL;
+    return p;
+}
+
+
+int main(){
+    
+    return 0;
+}
