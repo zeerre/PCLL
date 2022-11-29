@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 #########################################################################
 # File Name: update.all.branch.sh
 # Author:GeekBear
@@ -16,4 +16,5 @@ git merge origin/master.buffer
 
 echo
 echo
+echo "UpdateTime:"$(date +%F%n%T)
 echo "Updated all the branch ,And merged master.buffer to local branch COMPLETED!!!Thanks!!!"

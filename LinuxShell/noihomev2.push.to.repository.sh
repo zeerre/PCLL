@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 #########################################################################
 # File Name: comp.push.to.repository.sh
 # Author:GeekBear
@@ -18,5 +18,6 @@ git push origin master.noihomev2
 
 echo
 echo
+echo "UpdateTime:"$(date +%F%n%T)
 echo "The Works Which push Local-repository to Remote-repository is COMPLETED!!Thanks!!!"
 
