@@ -94,6 +94,7 @@ void pushnode(struct node* p,int data){
 	t=t->next;
       }
       t->next=temp;
+      temp->prev=t;
     }
   }
 }
