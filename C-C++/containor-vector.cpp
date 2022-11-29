@@ -65,21 +65,52 @@
 using namespace std;
 
 struct node{
-    int data;
-    struct node* next;
-    struct node* prev;
+  int data;
+  struct node* next;
+  struct node* prev;
 };
 struct node* newnode(int data){
-    struct node* p=(struct node*)malloc(sizeof(struct node));
-    //struct node* p=new struct node();
-    p->data=data;
-    p->next=NULL;
-    p->prev=NULL;
-    return p;
+  struct node* p=(struct node*)malloc(sizeof(struct node));
+  //struct node* p=new struct node();
+  p->data=data;
+  p->next=NULL;
+  p->prev=NULL;
+  return p;
 }
 
-
+void pushnode(struct node* p,int data){
+  struct node* temp=newnode(data);
+  if(p==NULL){
+    temp->data=data;
+    p=temp;
+  }else{
+    if(p->next==NULL){
+      p->next=temp;
+      temp->prev=p;
+    }else{
+      struct node* t;
+      t=p;
+      while(t->next!=NULL){
+	t=t->next;
+      }
+      t->next=temp;
+    }
+  }
+}
+void display(struct node* p){
+  struct node* tem;
+  tem=p;
+  while(tem!=NULL){
+    cout << tem->data << " ";
+    tem=tem->next;
+  }
+  cout<<endl;
+}
 int main(){
-    
-    return 0;
+  struct node* n=newnode(0);
+  pushnode(n,1);
+  display(n);
+  pushnode(n,2);
+  display(n);
+  return 0;
 }
