@@ -38,7 +38,7 @@
 *.class
 *.swp
 *.gch
-*.*~
+*.py~
 
 # Debug files
 *.dSYM/
