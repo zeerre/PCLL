@@ -1,4 +1,4 @@
-#!bin/python
+#!/usr/bin/python
 
 num=int(input("Please Input:"))
 sum=0
