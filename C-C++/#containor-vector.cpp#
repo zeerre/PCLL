@@ -107,9 +107,8 @@ void display(struct node* p){
   }
   cout<<endl;
 }
-void function(struct node* p){
-  
-}
+void ok(){
+   
 int main(){
   struct node* n=newnode(0);
   pushnode(n,1);

@@ -10,3 +10,4 @@ echo "Totle paramenter numbers: $#"
 echo "The whole paramenter is : $@"
 echo "The first paramenter is : ${1}"
 echo "The second paramenter is : ${2}"
+
