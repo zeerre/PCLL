@@ -18,6 +18,7 @@ public:
 	int checkPrime(int n);
 	int getPrime(int n);
 	int hashFunction(int key);
+	void pass();
 	void displayHash();
 };
 HashTable::HashTable(int c){
@@ -71,6 +72,7 @@ int HashTable::getPrime(int n){
 int HashTable::hashFunction(int key){
 	return (key % capacity);
 }
+void HashTable::pass(){}
 int main(){
     int key[] = {231, 321, 212, 321, 433, 262};
     int data[] = {123, 432, 523, 43, 423, 111};
