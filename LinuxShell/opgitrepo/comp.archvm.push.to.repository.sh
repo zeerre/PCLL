@@ -12,7 +12,7 @@ echo
 
 git add .
 
-git commit -m "Update the master.archcompvm branch"
+git commit -m "Update the origin master.archcompvm branch"
 
 git push origin master.archcompvm
 
