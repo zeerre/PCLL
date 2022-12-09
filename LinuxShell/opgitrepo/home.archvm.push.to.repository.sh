@@ -18,6 +18,6 @@ git push origin master.archomevm
 
 echo
 echo "UpdateTime:"$(date +%F%n%T)
-echo "The Works Which push Local-repository to \
+echo "The Works Which push Local-repository to 
     origin Remote-repository is COMPLETED!!Thanks!!!"
 
