@@ -12,12 +12,12 @@ echo
 
 git add .
 
-git commit -m "Update the master.archcompvm branch"
+git commit -m "Update the origin master.archcompvm branch"
 
 git push origin master.archcompvm
 
 echo
 echo
 echo "UpdateTime:"$(date +%F%n%T)
-echo "The Works Which push Local-repository to Remote-repository is COMPLETED!!Thanks!!!"
-
+echo "The Works Which push Local-repository to 
+    origin Remote-repository is COMPLETED!!Thanks!!!"
