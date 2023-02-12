@@ -10,8 +10,8 @@
 int main(int argc, int argv[]){
     printf("minimum: %d \n"
             "maximum: %d \n"
-            "size of byte: %d \n"
-            "size of bit : %d \n",
+            "size of byte: %ld \n"
+            "size of bit : %ld \n",
             INT_MIN,
             INT_MAX,
             sizeof(int),
