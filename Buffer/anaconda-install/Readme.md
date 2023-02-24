@@ -1,4 +1,4 @@
-### Anaconda install by curl and bash:
+### Anaconda install by curl and bash in proxy:
 
 #### download anaconda3 by curl
 
