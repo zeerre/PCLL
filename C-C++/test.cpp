@@ -6,13 +6,19 @@
 //*************************************************************************
 
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 int main() {
     int a;
+    float b;
     cin>>a;
+    b=a;
     while(a>0){
         a/=2;
+        b/=2.0;
         cout<<a<<" ";
+        
+        printf(" %f ",b);
     }
     cout<<endl;
     return 0;
