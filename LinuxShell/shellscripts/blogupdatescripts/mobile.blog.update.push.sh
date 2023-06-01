@@ -11,7 +11,7 @@ cd /home/kylin/geek/gitproject/github/blog.zeerre.github.io.ssh
 echo
 echo
 echo "切换到本地工作分支，更新远程仓库"
-git checkout master.mobile
+git checkout master.mobilekylin
 git pull
 echo
 echo
@@ -21,7 +21,7 @@ echo
 echo "推送本地分支到远程同名分支"
 git add .
 git commit -m "push local branch to remote."
-git push origin master.mobile
+git push origin master.mobilekylin
 echo
 echo "Finished！！"
 
