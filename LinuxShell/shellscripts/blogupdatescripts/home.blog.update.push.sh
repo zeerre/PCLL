@@ -1,6 +1,6 @@
 #!/bin/bash
 #########################################################################
-# File Name: home.blog.update.push.sh
+# File Name: home.kylin.blog.update.push.sh
 # Author:GeelBear
 # mail:zeerre98988@gmail.com
 # Created And Modified Time: ====2023-06-01  22-06-20====
