@@ -1,6 +1,6 @@
 #!/bin/bash
 #########################################################################
-# File Name: home.blog.update.push.sh
+# File Name: home.kylin.blog.update.push.sh
 # Author:GeelBear
 # mail:zeerre98988@gmail.com
 # Created And Modified Time: ====2023-06-01  22-06-20====
@@ -11,7 +11,7 @@ cd /home/kylin/geek/gitproject/github/blog.zeerre.github.io.ssh
 echo
 echo
 echo "切换到本地工作分支，更新远程仓库"
-git checkout master.home
+git checkout master.homekylin
 git pull
 echo
 echo
@@ -21,7 +21,7 @@ echo
 echo "推送本地分支到远程同名分支"
 git add .
 git commit -m "push local branch to remote."
-git push origin master.home
+git push origin master.homekylin
 echo
 echo "Finished！！"
 
