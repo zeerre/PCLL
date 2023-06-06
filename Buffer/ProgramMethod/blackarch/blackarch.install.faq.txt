@@ -1,0 +1,50 @@
+download blackarch ISO
+
+boot the blackarch os with the user/password root/blackarch.
+
+vim /etc/pacman.d/mirrorlist
+
+ustc:
+https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+tuna:
+https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+
+vim /etc/pacman.d/blackarch-mirrorlist
+
+ustc:
+https://mirrors.ustc.edu.cn/blackarch/$repo/os/$arch
+tuna:
+https://mirrors.tuna.tsinghua.edu.cn/balckarch/$repo/os/$arch
+
+dhcpcd
+systemctl enable dhcpcd
+
+vim /bin/blackarch-install
+change "yahoo" to "baidu".
+
+blackarch-install
+
+/dev/sda1 /boot  bootable
+/dev/sda2 /
+/dev/sda3 swap
+
+after install,boot the blackarch os with the user/password root/password.
+
+pacman-key --init
+pacman-key --populate
+pacman -Syu
+
+reboot os and load system by root user.
+
+put general user into sudo group
+
+vim /etc/sudoers
+
+insert "username ALL(ALL:ALL) ALL”into the sudoers file after the "root ALL(ALL:ALL) ALL".
+
+reboot os and  load system by general user in sudoers. 
+
+gem source config --add https://mirrors.ustc.edu.cn/rubygems/
+gem sources --remove https://rubygems.org/
+gem source -u
+sudo pacman -Syu

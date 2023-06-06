@@ -1,0 +1,5 @@
+sudo dpkg-reconfigure locales
+
+sudo apt install xfonts-intl-chinese ttf-wqy-microhei
+
+reboot

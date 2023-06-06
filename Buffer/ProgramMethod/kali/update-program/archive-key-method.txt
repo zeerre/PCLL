@@ -1,0 +1,3 @@
+cd ~/workspace
+wget archive.kali.org/archive-key.asc
+sudo apt-key add archive-key.asc
