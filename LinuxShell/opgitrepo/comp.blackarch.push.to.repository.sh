@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #########################################################################
-# File Name: home.kylin.push.to.repository.sh
+# File Name: comp.blackarch.push.to.repository.sh
 # Author:GeekBear
 # mail:zeerre98988@gmail.com
 # Created And Modified Time: ====2022-10-25  12-44-45====
@@ -12,9 +12,9 @@ echo
 
 git add .
 
-git commit -m "Update the master.homekylin branch"
+git commit -m "Update the master.copmblackarch branch"
 
-git push origin master.homekylin
+git push origin master.compblackarch
 
 echo
 echo "UpdateTime:"$(date +%F%n%T)
