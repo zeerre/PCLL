@@ -16,8 +16,10 @@ unzip:
 tar:
 zip:
     tar zcvf output.tar.gz foder
+    tar jcvf output.tar.bz2 foder
 unzip:
     tar zxvf filename.tar.gz
+    tar jxvf filename.tar.bz2
 
 zip&unzip:
 zip:
