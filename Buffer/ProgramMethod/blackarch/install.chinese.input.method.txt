@@ -4,7 +4,19 @@
 
 3.sudo pacman -S wqy-zenhei
 
+### fcitx
+
 4.sudo pacman -S fcitx fcitx-im fcitx-googlepinyin fcitx-sunpinyin fcitx-shuangpinyin
 
 5.reboot system.
 
+### ibus
+
+6.sudo pacman -S ibus ibus-sunpinyin
+
+7.ibus-setup
+
+8.vim ~/.bashrc
+	export GTK_IM_MODULE=ibus
+	export XMODIFIERS=@im=ibus
+	export QT_IM_MODULE=ibus
