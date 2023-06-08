@@ -1,0 +1,28 @@
+//*************************************************************************
+//* File Name: 7z.install.and.zip-compression.or.unzip.txt
+//* Author:GeekBear
+//* Mail:zeerre98988@gmail.com 
+//* Created And Modified Time: ====2023-06-08  10-44-05====
+//*************************************************************************
+
+On Ubuntu:
+Install:
+    sudo apt install p7zip-full
+compression:zip
+    7z a -t7z -r name.7z foder
+unzip:
+    7z x name.7z -r -o/foder
+
+tar:
+zip:
+    tar zcvf output.tar.gz foder
+unzip:
+    tar zxvf filename.tar.gz
+
+zip&unzip:
+zip:
+    zip -r outputname.zip foder
+unzip:
+    unzip -o -d /foder finame.zip
+
+
