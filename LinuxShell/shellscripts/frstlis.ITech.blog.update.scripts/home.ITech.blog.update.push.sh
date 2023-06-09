@@ -1,6 +1,6 @@
 #!/bin/bash
 #########################################################################
-# File Name: comp.ITech.blog.update.push.sh
+# File Name: home.blog.update.push.sh
 # Author:GeelBear
 # mail:zeerre98988@gmail.com
 # Created And Modified Time: ====2023-06-01  22-06-20====
@@ -11,8 +11,8 @@ cd /home/kylin/geek/gitproject/github/Blog.ITech.frstlis.comp.ssh
 echo
 echo
 echo "切换到本地工作分支，更新远程仓库"
+git checkout Hexo-home
 git pull
-git checkout Hexo-comp
 echo
 echo
 echo "同步远程仓库到本地"
@@ -21,7 +21,7 @@ echo
 echo "推送本地分支到远程同名分支"
 git add .
 git commit -m "push local branch to remote."
-git push origin Hexo-comp
+git push origin Hexo-home
 echo
 echo "Finished！！"
 
