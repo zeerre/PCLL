@@ -7,7 +7,7 @@
 #########################################################################
 
 echo "进入工作目录"
-cd /home/kylin/geek/gitproject/github/blog.zeerre.github.io.ssh
+cd /home/kylin/geek/gitproject/github/Blog.ITech.frstlis.comp.ssh
 echo
 echo
 echo "切换到本地工作分支，更新远程仓库"
