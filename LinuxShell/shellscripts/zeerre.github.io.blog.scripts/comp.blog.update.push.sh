@@ -23,6 +23,8 @@ git add .
 git commit -m "push local branch to remote."
 git push origin master.compkylin
 echo
+echo "UpdateTime:"$(date +%F%n%T)
+echo
 echo "Finished！！"
 
 
