@@ -1,6 +1,6 @@
 #!/bin/bash
 #########################################################################
-# File Name: mobile.kylin.blog.update.push.sh
+# File Name: mobile.blog.update.push.sh
 # Author:GeelBear
 # mail:zeerre98988@gmail.com
 # Created And Modified Time: ====2023-06-01  22-06-20====
@@ -22,8 +22,6 @@ echo "推送本地分支到远程同名分支"
 git add .
 git commit -m "push local branch to remote."
 git push origin master.mobilekylin
-echo
-echo "UpdateTime:"$(date +%F%n%T)
 echo
 echo "Finished！！"
 
