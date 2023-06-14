@@ -48,3 +48,19 @@ gem source config --add https://mirrors.ustc.edu.cn/rubygems/
 gem sources --remove https://rubygems.org/
 gem source -u
 sudo pacman -Syu
+
+Install desktop
+
+gnome:
+sudo pacman -S gnome gnome-extra
+
+restart os
+
+sudo systemctl start networkmanager.service
+sudo systemctl enable networkmanager.service
+
+logout os
+
+xfce:
+sudo pacman -S xfce4 xfce4-goodies
+
