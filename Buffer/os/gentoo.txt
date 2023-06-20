@@ -1,0 +1,245 @@
+     1  ping -c 2 www.baidu.com
+    2  fdisk -l
+    3  fdisk /dev/sda
+    4  mkfs.vfat -F 32 /dev/sda1
+    5  mkfs.ext4 /dev/sda2
+    6  mkdir /mnt/gentoo
+    7  mkdir --parents /mnt/gentoo
+    8  mount /dev/sda2 /mnt/gentoo
+    9  cd /mnt/gentoo/
+   10  links https://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20221211T170150Z/
+   11  ls
+   12  tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+   13  nano -w /mnt/gentoo/etc/portage/make.conf
+   14  mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+
+   15  nano -w /mnt/gentoo/etc/portage/make.conf
+   16  mkdir --parents /mnt/gentoo/etc/portage/repos.conf
+   17  cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+   18  nano -w/mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+   19  nano -w /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+   20  cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+   21  mount --types proc /proc /mnt/gentoo/proc
+   22  mount --rbind /sys /mnt/gentoo/sys
+   23  mount --make-rslave /mnt/gentoo/sys
+   24  mount --rbind /dev /mnt/gentoo/dev
+   25  mount --make-rslave /mnt/gentoo/dev
+   26  mount --bind /run /mnt/gentoo/run
+   27  ls
+   28  mount --make-slave /mnt/gentoo/run
+   29  mount --rbind /tmp /mnt/gentoo/tmp
+
+chroot /mnt/gentoo /bin/bash
+env-update && source /etc/profile
+   
+
+    1  source /etc/profile
+    2  export PS1="(chroot) ${PS1}"
+    3  mount /dev/sda1 /boot
+    4  emerge-webrsync
+    5  nano /etc/portage/make.conf
+
+# pakages management
+ACCEPT_KEYWORDS="~amd64"
+ACCEPT_LICENSE="-* @FREE @BINARY-REDISTRIBUTABLE"
+
+    6  emerge --sync
+    7  eselect news list
+    8  eselect profile list
+    9  eselect profile set 6
+   10  emerge --ask --verbose --update --deep --newuse @world
+   11  l
+   12  emerge --depclean
+   13  emerge -av dev-util/ccache
+   14  mkdir -p /var/cache/ccache
+   15  chown root:portage -R /var/cache/ccache
+   16  chmod 2775 -R /var/cache/ccache
+   17  nano /var/cache/ccache/ccache.conf
+
+max_size = 500.0G
+umask = 002
+hash_dir = false
+compiler_check = %compiler% -v
+cache_dir_levels = 3
+compression = true
+compression_level = 1
+
+   18  nano /etc/portage/make.conf
+   19  emerge --ask --verbose --update --deep --newuse @world
+   20  emerge --info | grep ^USE
+   21  nano /etc/portage/make.conf
+   22  nano /etc/portage/make.conf
+   23  emerge --ask app-portage/cpuid2cpuflags
+   24  cpuid2cpuflags >> /etc/portage/make.conf
+   25  nano /etc/portage/make.conf
+   26  cpuid2cpuflags >> /etc/portage/make.conf
+   27  nano /etc/portage/make.conf
+   28  nano /etc/portage/make.conf
+   29  nano /etc/portage/make.conf
+   30  echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/00cpu-flags
+   31  nano /etc/portage/make.conf
+   32  mkdir /etc/portage/package.license
+   33  nano /etc/portage/package.license/kernel
+   34  nano /etc/portage/package.license/kernel
+   35  ls  /etc/portage/package.license/kernel
+   36  ls  /etc/portage/package.license/
+   37  ls /usr/share/zoneinfo
+   38  emerge --ask --verbose --update --deep --newuse @world
+   39  nano /etc/portage/make.conf
+   40  emerge -avDN sys-devel/gcc
+   41  emerge -av --verbose-conflicts sys-devel/gcc
+
+
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS="-O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
+
+# NOTE: This stage was built with the bindist Use flag enabled
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+MAKEOPTS="-j4"
+# pakages management
+ACCEPT_KEYWORDS="~amd64"
+ACCEPT_LICENSE="-* @FREE @BINARY-REDISTRIBUTABLE"
+
+## ccache
+FEATURES="ccache"
+CCACHE_DIR="/var/cache/ccache"
+
+GENTOO_MIRRORS="https://mirrors.ustc.edu.cn/gentoo"
+
+
+
+ERROR:
+libtool: warning: remember to run 'libtool --finish /usr/lib64'
+
+
+    1  ping -c 2 www.baidu.com
+    2  fdisk /dev/sda
+    3  mkfs.vfat -F 32 /dev/sda1
+    4  mkfs.ext4 /dev/sda2
+    5  mkdir --parents /mnt/gentoo
+    6  cd /mnt/gentoo/
+    7  links https://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20221211T170150Z/
+    8  ls
+    9  cd
+   10  mount /dev/sda2 /mnt/gentoo/
+   11  cd /mnt/gentoo/
+   12  ls
+   13  links https://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20221211T170150Z/
+   14  ls
+   15  date
+   16  tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+   17  nano -w /mnt/gentoo/etc/portage/make.conf
+   18  mirrorselect
+   19  mirrorselect -i
+   20  mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+   21  nano -w /mnt/gentoo/etc/portage/make.conf
+   22  nano -w /mnt/gentoo/etc/portage/make.conf
+   23  mkdir --parents /mnt/gentoo/etc/portage/repos.conf
+   24  cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+   25  nano -w/mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+   26  nano -w /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+   27  cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+   28  mount --types proc /proc /mnt/gentoo/proc
+   29  mount --rbind /sys /mnt/gentoo/sys
+   30  mount --make-rslave /mnt/gentoo/sys
+   31  mount --rbind /dev /mnt/gentoo/dev
+   32  mount --make-rslave /mnt/gentoo/dev
+   33  mount --bind /run /mnt/gentoo/run
+   34  mount --make-slave /mnt/gentoo/run
+   35  mount --rbind /tmp /mnt/gentoo/tmp
+   36  chroot /mnt/gentoo /bin/bash
+
+
+    1  env-update && source /etc/profile
+    2  source /etc/profile
+    3  export PS1="(chroot) ${PS1}"
+    4  mount /dev/sda1 /boot
+    5   emerge-webrsync
+    6  emerge --sync
+    7  eselect profile list
+    8  eselect profile set 6
+    9  emerge --ask --verbose --update --deep --newuse @world
+   10  emerge --ask app-portage/cpuid2cpuflags
+   11  cpuid2cpuflags >> /etc/portage/make.conf
+   12  nano /etc/portage/make.conf
+   13  echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/00cpu-flags
+   14  mkdir /etc/portage/package.license
+   15  nano /etc/portage/package.license/kernel
+   16  echo "Asia/Shanghai" > /etc/timezone
+   17  emerge --config sys-libs/timezone-data
+   18  ln -sf ../usr/share/zoneinfo/Europe/Brussels /etc/localtime
+   19  nano -w /etc/locale.gen
+   20  locale-gen
+   21  eselect locale list
+   22  eselect locale set 4
+   23  nano -w /etc/env.d/02locale
+   24  env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
+   25  emerge --ask sys-kernel/linux-firmware
+   26  emerge --ask sys-kernel/gentoo-sources
+   27  eselect kernel list
+   28  eselect kernel set 1
+   29  emerge --ask sys-apps/pciutils
+   30  cd /usr/src/linux
+   31  make menuconfig
+   32  make menuconfig
+   33  make && make modules_install
+   34  make install
+   35  emerge --ask sys-kernel/dracut
+   36  dracut --kver=5.15.52-gentoo
+   37  ls /boot/initramfs*
+   38  emerge --ask sys-kernel/dracut
+   39  dracut --kver=5.15.52-gentoo
+   40  find /lib/modules/<kernel version>/ -type f -iname '*.o' -or -iname '*.ko' | less
+   41  dracut --kver=5.15.80-gentoo
+   42  find /lib/modules/5.15.80/ -type f -iname '*.o' -or -iname '*.ko' | less
+   43  find /lib/modules/5.15.80-gentoo/ -type f -iname '*.o' -or -iname '*.ko' | less
+   44  mkdir -p /etc/modules-load.d
+   45  nano -w /etc/modules-load.d/network.conf
+   46  nano /etc/fstab
+   47  nano /etc/conf.d/hostname
+   48  nano /etc/conf.d/net
+   49  emerge --ask net-misc/dhcpcd
+   50  rc-update add dhcpcd default
+   51  rc-service dhcpcd start
+   52  nano /etc/hosts
+   53  passwd
+   54  nano /etc/rc.conf
+   55  nano /etc/conf.d/keymaps
+   56  nano /etc/conf.d/hwclock
+   57  emerge --ask app-admin/sysklogd
+   58  rc-update add sysklogd default
+   59  emerge --ask sys-process/cronie
+   60  rc-update add cronie default
+   61  crontab /etc/crontab
+   62  emerge --ask sys-apps/mlocate
+   63  rc-update add sshd default
+   64  nano -w /etc/inittab
+   65  emerge --ask net-misc/chrony
+   66  rc-update add chronyd default
+   67  emerge --ask net-misc/dhcpcd
+   68  emerge --ask --verbose sys-boot/grub
+   69  echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
+   70  grub-install --target=x86_64-efi --efi-directory=/boot
+   71  grub-mkconfig -o /boot/grub/grub.cfg
+   72  exit
+   73  cd
+   74  umount -l /mnt/gentoo/dev{/shm,/pts,}
+   75  umount -R /mnt/gentoo
+   76  reboot
+
+
+## On windows 10 ,VirtualBox Installation with winget command
+
+winget search virtualbox
+winget install  Oracle.VirtualBox
