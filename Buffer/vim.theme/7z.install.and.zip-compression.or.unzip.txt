@@ -5,7 +5,7 @@
 //* Created And Modified Time: ====2023-06-08  10-44-05====
 //*************************************************************************
 
-On Ubuntu:
+On Ubuntu Linux:
 Install:
     sudo apt install p7zip-full
 compression:zip

@@ -17,5 +17,5 @@ git merge origin/master.buffer
 echo
 echo
 echo "UpdateTime:"$(date +%F%n%T)
-echo "Updated all the branch ,
+echo "Updated all the branch,
     And merged master.buffer to local branch COMPLETED!!!Thanks!!!"
