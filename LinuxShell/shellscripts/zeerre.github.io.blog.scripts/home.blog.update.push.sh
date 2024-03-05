@@ -23,6 +23,11 @@ git add .
 git commit -m "push local branch to remote."
 git push origin master.homekylin
 echo
+<<<<<<< HEAD
+echo "UpdateTime:"$(date +%F%n%T)
+echo
+=======
+>>>>>>> origin/master.buffer
 echo "Finished！！"
 
 
