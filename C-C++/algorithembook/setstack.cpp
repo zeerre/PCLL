@@ -27,7 +27,7 @@ int main(){
 	s.pop();
 	x.clear();
 	if(op[0]=='U')
-	  set_union(x1.begin(),x1.end(),x2.begin(),x2.end,inserter(x,x.begin()));
+	  set_union(x1.begin(),x1.end(),x2.begin(),x2.end(),inserter(x,x.begin()));
 	if(op[0]=='I')
 	  set_intersection(x1.begin(),x1.end(),x2.begin(),x2.end(),inserter(x,x.begin()));
 	if(op[0]=='A') x=x2,x.insert(ID(x1));
