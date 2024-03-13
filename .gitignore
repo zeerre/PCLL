@@ -41,7 +41,7 @@
 # Emacs buffer file
 *.cpp~
 #*.*#
-#*.*
+.#*.*
 
 # Debug files
 *.dSYM/
