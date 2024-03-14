@@ -20,7 +20,7 @@ int main(){
     do{
       k1=next(k1),ans=max(ans,k1);
       k2=next(k2),ans=max(ans,k2);
-
+	  k2=next(k2),ans=max(ans,k2);
     }while(k1!=k2);
     printf("%lld\n",ans);
   }
