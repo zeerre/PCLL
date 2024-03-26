@@ -9,12 +9,11 @@ struct DLX{
   int n,sz;
   int S[maxn];
   int row[maxnode],col[maxnode];
-  int L[maxnode],R[maxnode],U[maxnode],d[maxnode];
+  int L[maxnode],R[maxnode],U[maxnode],D[maxnode];
   int ansd,ans[maxr];
   void init(int n){
 	this->n=n;
-	for(int i=0;i<=n;i++){
-	  U[i]=i;D[i]=i;L[i]=i-1;R[i]=i+1;}
+	for(int i=0;i<=n;i++){U[i]=i;D[i]=i;L[i]=i-1;R[i]=i+1;}
 	R[n]=0;
 	L[0]=n;
 	sz=n+1;
@@ -64,4 +63,61 @@ struct DLX{
 	restore(c);
 	return false;
   }
+  bool solve(vector<int>& v){
+	v.clear();
+	if(!dfs(0)) return false;
+	for(int i=0;i<ansd;i++) v.push_back(ans[i]);
+	return true;
+  }
 };
+//#include<cassert>
+DLX solver;
+const int SLOT =0;
+const int ROW =1;
+const int COL =2;
+const int SUB=3;
+int encode(int a,int b,int c){
+  return a*256+b*16+c+1;
+}
+void decode(int code,int& a,int& b,int& c){
+  code--;
+  c=code%16;
+  code/=16;
+  b=code%16;
+  code/=16;
+  a=code;
+}
+char puzzle[16][20];
+bool read(){
+  for(int i=0;i<16;i++)
+	if(scanf("%s",puzzle[i])!=1) return false;
+  return true;
+}
+int main(){
+  int kase=0;
+  while(read()){
+	if(++kase!=1) printf("\n");
+	solver.init(1024);
+	for(int r=0;r<16;r++)
+	  for(int c=0;c<16;c++)
+		for(int v=0;v<16;v++)
+		  if(puzzle[r][c]=='-' || puzzle[r][c]=='A'+v){
+			vector<int> columns;
+			columns.push_back(encode(SLOT,r,c));
+			columns.push_back(encode(ROW,r,v));
+			columns.push_back(encode(COL,c,v));
+			columns.push_back(encode(SUB,(r/4)*4+c/4,v));
+			solver.addRow(encode(r,c,v),columns);
+		  }
+	vector<int> ans;
+	assert(solver.solve(ans));
+	for(int i=0;i<ans.size();i++){
+	  int r,c ,v;
+	  decode(ans[i],r,c,v);
+	  puzzle[r][c]='A'+v;
+	}
+	for(int i=0;i<16;i++)
+	  printf("%s\n",puzzle[i]);
+  }
+  return 0;
+}
